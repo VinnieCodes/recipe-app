@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{object.name}}</title>
-  <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'recipes/css/detail.css' %}">
 </head>
 <body>
-  <h1>Recipe - {{object.name}}</h1>
-
-<b>Ingredients: </b> {{object.ingredients}} <br /><br />
-<b>Cooking Time: </b> {{object.cooking_time}} minutes<br /><br />
-<b>Difficulty: </b> {{object.difficulty}} <br /><br />
-
-<img src="{{object.pic.url}}" width="200" />
+  <div class="center-content">
+    <h1>Recipe - {{object.name}}</h1>
+    <b>Ingredients: </b> {{object.ingredients}} <br /><br />
+    <b>Cooking Time: </b> {{object.cooking_time}} minutes<br /><br />
+    <b>Difficulty: </b> {{object.difficulty}} <br /><br />
+    <img src="{{object.pic.url}}" width="200" />
+  </div>
 </body>
 </html>
 

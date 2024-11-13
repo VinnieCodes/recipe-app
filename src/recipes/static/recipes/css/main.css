@@ -1,17 +1,18 @@
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   margin: 0;
   padding: 20px;
-}
-
-h1 {
-  color: #343a40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 table {
-  width: 100%;
+  width: 80%;
+  max-width: 800px;
   border-collapse: collapse;
   margin-top: 20px;
 }
