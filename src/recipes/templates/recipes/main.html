@@ -1,4 +1,14 @@
-<h1>Recipes' list</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+</head>
+<body>
+  <h1>Recipes' list</h1>
 {% comment%} HTML tag for heading {% endcomment%}
 
 <table border="1" cellpadding="5" cellspacing="5">
@@ -13,15 +23,17 @@
     <td>tag adds a column {% endcomment%}</td>
     <td>Recipes Images</td>
   </tr>
-  {% for object in object_list %} {% comment%} go through each element of books'
+  {% for object in object_list %} {% comment%} go through each element of recipes'
   list {% endcomment%}
   <tr>
     <td>
       <a href="{{object.get_absolute_url}}">
-        {% comment%} add links to book names {% endcomment%} {{object.name}}
+        {% comment%} add links to recipe names {% endcomment%} {{object.name}}
       </a>
     </td>
-    <td><img src="{{object.pic.url}}" width="150" height="200" /></td>
+    <td><img src="{{object.pic.url}}" width="150" /></td>
   </tr>
   {% endfor %}
 </table>
+</body>
+</html>
