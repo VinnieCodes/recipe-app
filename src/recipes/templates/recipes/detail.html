@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{% static 'recipes/css/detail.css' %}">
 </head>
 <body>
+  <button><a href="{% url 'recipes:list' %}">Back</a></button>
   <div class="center-content">
     <h1>Recipe - {{object.name}}</h1>
     <b>Ingredients: </b> {{object.ingredients}} <br /><br />
