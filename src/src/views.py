@@ -1,5 +1,5 @@
 # Django authentication libaries
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 # Django Form for authentication
 from django.contrib.auth.forms import AuthenticationForm
@@ -30,3 +30,6 @@ def login_view(request):
   }
   return render(request, 'auth/login.html', context)
 
+def logout_view(request):
+  logout(request) # use Django's built-in logout function
+  return redirect('login') # after logout, send user to login page
