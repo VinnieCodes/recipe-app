@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="{% static 'recipes/css/main.css' %}">
 </head>
 <body>
+  <button>
+  <a href="{%url 'logout' %}"> Logout </a></button>
   <h1>Recipes' list</h1>
 {% comment%} HTML tag for heading {% endcomment%}
 
@@ -26,10 +28,10 @@
   {% for object in object_list %} {% comment%} go through each element of recipes'
   list {% endcomment%}
   <tr>
-    <td>
+    <td><button>
       <a href="{{object.get_absolute_url}}">
         {% comment%} add links to recipe names {% endcomment%} {{object.name}}
-      </a>
+      </a></button>
     </td>
     <td><img src="{{object.pic.url}}" width="150" /></td>
   </tr>
