@@ -21,7 +21,7 @@ def login_view(request):
       user = authenticate(username=username, password=password)
       if user is not None:
         login(request, user)
-        return redirect('sales:records') # send user to the desired page
+        return redirect('recipes:list') # send user to the desired page
     else:
       error_message = 'Oops! Something went wrong.' # error message
   context = {
