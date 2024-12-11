@@ -36,14 +36,17 @@ def search(request):
         recipe_title = request.POST.get("recipe_title")
         chart_type = request.POST.get("chart_type")
         # display in terminal - needed for debugging during development only
-        qs = Recipe.objects.filter(name=recipe_title)
+        qs = Recipe.objects.filter(name__icontains=recipe_title)
         if qs:
             recipes_df = pd.DataFrame(qs.values())
             recipes_df["name"] = recipes_df["id"].apply(
                 get_recipe_name_from_id
             )
+            recipes_df["pic"] = recipes_df["pic"].apply(
+                lambda x: f'<img src="{x}" width="100" height="100"/>'
+            )
 
-        recipes_df = recipes_df.to_html()
+        recipes_df = recipes_df.to_html(escape=False)
 
     context = {
         "form": form,
